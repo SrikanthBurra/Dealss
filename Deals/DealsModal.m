@@ -10,4 +10,6 @@
 
 @implementation DealsModal
 
+@synthesize deal_detail,title,pic_thumb,desc;
+
 @end

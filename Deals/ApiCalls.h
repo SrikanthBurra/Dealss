@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFNetworking.h"
+#import "DealsModal.h"
 
-@interface ApiCalls : NSObject
+@protocol RemoteApiProtocol <NSObject>
+
+@optional
+- (void)dictDelegate:(NSDictionary *)dealsDict;
+@end
+
+@interface ApiCalls : NSObject{
+    id <RemoteApiProtocol> delegate;
+}
+@property (nonatomic, retain) id<RemoteApiProtocol> delegate;
+
+- (void) doSignUp:(id) deleGate;
+- (NSDictionary *) handleDealsData:(NSMutableDictionary *)json;
 
 @end

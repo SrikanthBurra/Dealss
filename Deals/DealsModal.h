@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DealsModal : NSObject
+@interface DealsModal : NSObject{
+    NSString *title;
+    NSString *deal_detail;
+    NSString *pic_thumb;
+}
+@property(strong, nonatomic) NSString *title;
+@property(strong, nonatomic) NSString *deal_detail;
+@property(strong, nonatomic) NSString *pic_thumb;
+@property (nonatomic, retain) NSAttributedString *desc;
+
 
 @end

@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ApiCalls.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<RemoteApiProtocol> {
+    ApiCalls * service;
+}
+@property (nonatomic, strong) ApiCalls * service;
 
+- (IBAction)buttonSelected:(id)sender;
+- (IBAction)button1Selected:(id)sender;
 
 @end
 

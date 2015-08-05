@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="msX-sb-odX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,151 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfR-9z-9aw">
+                                <rect key="frame" x="177" y="46" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="z9e-iU-7jh"/>
+                                </constraints>
+                                <state key="normal" title="Top">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="z9e-iU-7jh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="z9e-iU-7jh"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dng-hI-Np1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CX1-L3-pWL">
+                                <rect key="frame" x="177" y="46" width="46" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="WRy-wZ-oJl"/>
+                                </constraints>
+                                <state key="normal" title="Popular">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WRy-wZ-oJl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="WRy-wZ-oJl"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="button1Selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s6k-r9-8Qr"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iz6-SO-768">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9Wc-51-wG3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tex-Xg-Icg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YfR-9z-9aw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2sS-Pl-Q9m"/>
+                            <constraint firstItem="CX1-L3-pWL" firstAttribute="leading" secondItem="YfR-9z-9aw" secondAttribute="trailing" id="2wa-Qr-WZT"/>
+                            <constraint firstItem="iz6-SO-768" firstAttribute="top" secondItem="YfR-9z-9aw" secondAttribute="bottom" constant="-1" id="Bdv-v0-97P"/>
+                            <constraint firstItem="CX1-L3-pWL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NdG-WF-FF0"/>
+                            <constraint firstAttribute="trailing" secondItem="CX1-L3-pWL" secondAttribute="trailing" id="Owz-rx-Vuq"/>
+                            <constraint firstAttribute="trailing" secondItem="iz6-SO-768" secondAttribute="trailing" id="Sc1-xJ-xqB"/>
+                            <constraint firstItem="YfR-9z-9aw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TGe-iv-nCh"/>
+                            <constraint firstItem="iz6-SO-768" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tjs-8a-9ef"/>
+                            <constraint firstItem="YfR-9z-9aw" firstAttribute="width" secondItem="CX1-L3-pWL" secondAttribute="width" id="fBF-og-G5B"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iz6-SO-768" secondAttribute="bottom" id="u3I-SS-1p6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="CX1-L3-pWL"/>
+                                <exclude reference="iz6-SO-768"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2wa-Qr-WZT"/>
+                                <exclude reference="NdG-WF-FF0"/>
+                                <exclude reference="Owz-rx-Vuq"/>
+                                <exclude reference="Bdv-v0-97P"/>
+                                <exclude reference="Sc1-xJ-xqB"/>
+                                <exclude reference="Tjs-8a-9ef"/>
+                                <exclude reference="2sS-Pl-Q9m"/>
+                                <exclude reference="TGe-iv-nCh"/>
+                                <exclude reference="fBF-og-G5B"/>
+                                <exclude reference="u3I-SS-1p6"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="CX1-L3-pWL"/>
+                                <include reference="iz6-SO-768"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2wa-Qr-WZT"/>
+                                <include reference="NdG-WF-FF0"/>
+                                <include reference="Owz-rx-Vuq"/>
+                                <include reference="Bdv-v0-97P"/>
+                                <include reference="Sc1-xJ-xqB"/>
+                                <include reference="Tjs-8a-9ef"/>
+                                <include reference="2sS-Pl-Q9m"/>
+                                <include reference="TGe-iv-nCh"/>
+                                <include reference="fBF-og-G5B"/>
+                                <include reference="u3I-SS-1p6"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="Ad9-ch-nTO"/>
+                    <connections>
+                        <outlet property="btn" destination="YfR-9z-9aw" id="BCD-tP-92O"/>
+                        <outlet property="btn1" destination="CX1-L3-pWL" id="BB6-PT-hav"/>
+                        <outlet property="tableView" destination="iz6-SO-768" id="BBN-82-bzy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1192" y="306"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Myy-ld-sGy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="msX-sb-odX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A2d-9D-tsa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CM1-to-3KP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HmA-zm-qFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="-363.75"/>
         </scene>
     </scenes>
 </document>
